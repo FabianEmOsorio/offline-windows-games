@@ -1,0 +1,442 @@
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+  <div id="postOverlay"></div>
+  <div id="damageVignette"></div>
+  <div id="hudMarkersLayer"></div>
+
+  <!-- HUD TÁCTICO MINIMALISTA (ESTILO GHOST RECON) -->
+  <div id="hudContainer">
+    <!-- Brújula Superior con Rumbo y Grados -->
+    <div id="compassTape">
+      <div id="compassRibbon">
+        <div id="compassMarks"></div>
+        <div id="compassIndicator"></div>
+      </div>
+      <div id="sectorInfo">SECTOR: VALLE DE CHAMPSAUR // ALPES // OTS</div>
+    </div>
+
+    <!-- Barra Compacta Superior Derecha (Acceso rápido de menús detrás de Keybinds) -->
+    <div id="quickRibbon">
+      <div id="btnLockStatus" class="pill-btn interactive" title="Clic en pantalla para capturar cursor; mantén ALT para liberarlo en Zen Browser">
+        <span id="lockDot" style="width:7px; height:7px; border-radius:50%; background:var(--accent-amber); display:inline-block;"></span>
+        <span id="lockText">CLIC EN PANTALLA PARA JUGAR [ALT: CURSOR]</span>
+      </div>
+      <div class="nav-strip">
+        <span class="kb-chip" data-open-tab="tabSettings"><strong>[ESC]</strong> PAUSA</span>
+        <span class="kb-chip" data-open-tab="tabLoadout"><strong>[I]</strong> ARMERÍA</span>
+        <span class="kb-chip" data-open-tab="tabVehicles"><strong>[K]</strong> VEHÍCULOS</span>
+        <span class="kb-chip" data-open-tab="tabEnvironment"><strong>[M]</strong> MAPA</span>
+        <span class="kb-chip" id="btnToggleControlsHint"><strong>[F1]</strong> CONTROLES</span>
+      </div>
+    </div>
+
+    <div id="altFreeToast">CURSOR LIBERADO [ALT]</div>
+
+    <!-- Retícula Central GRW -->
+    <div id="crosshair">
+      <div class="ch-tick ch-t"></div>
+      <div class="ch-tick ch-b"></div>
+      <div class="ch-tick ch-l"></div>
+      <div class="ch-tick ch-r"></div>
+      <div id="crosshairDot"></div>
+      <div id="hitMarker"></div>
+    </div>
+
+    <!-- Indicador de Interacción -->
+    <div id="interactPrompt">PRESIONA [F] PARA ENTRAR AL VEHÍCULO</div>
+    <div id="killFeedBanner"></div>
+    <div id="sectorStatusBar">
+      <div id="timeHudPill" class="sector-pill">HORA: <b>15:30</b></div>
+      <div id="outpostHudPill" class="sector-pill">BASE CORDILLERA: <b>6 HOSTILES</b></div>
+      <div id="buggyGearPill" class="sector-pill" style="display:none;">MARCHA: <b>N // 950 RPM</b></div>
+    </div>
+
+    <!-- Tarjeta Inferior Izquierda: Operador, Hombro OTS, Sigilo y Telemetría -->
+    <div id="operatorCard">
+      <div class="hud-title-row">
+        <div class="hud-callsign">
+          <span style="display:inline-block; width:8px; height:8px; background:var(--accent-cyan); transform:rotate(45deg);"></span>
+          GHOST-01 [NOMAD]
+        </div>
+        <div style="display:flex; gap:6px; align-items:center;">
+          <div id="shoulderPill" class="hud-mode-pill" style="border-color:var(--accent-amber); color:var(--accent-amber); background:rgba(255,179,0,0.14);">HOMBRO DER</div>
+          <div id="modePill" class="hud-mode-pill">A PIE</div>
+        </div>
+      </div>
+
+      <div class="bar-row">
+        <div class="bar-label">
+          <span>INTEGRIDAD VITAL</span>
+          <span id="hpText">100%</span>
+        </div>
+        <div class="bar-track">
+          <div id="hpBar" class="bar-fill" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <div class="bar-row">
+        <div class="bar-label">
+          <span>DETECCIÓN (CAMUFLAJE)</span>
+          <span id="stealthText">12% [OCULTO]</span>
+        </div>
+        <div class="bar-track">
+          <div id="stealthBar" class="bar-fill" style="width: 12%; background: var(--accent-emerald);"></div>
+        </div>
+      </div>
+
+      <div class="telemetry-grid">
+        <div class="telemetry-item">
+          <span>POSTURA / APUNTADO</span>
+          <span id="stanceText">DE PIE</span>
+        </div>
+        <div class="telemetry-item">
+          <span>VELOCIDAD</span>
+          <span id="speedText">0 KM/H</span>
+        </div>
+        <div class="telemetry-item">
+          <span>ALTITUD</span>
+          <span id="altText">1,810 M</span>
+        </div>
+        <div class="telemetry-item">
+          <span>DIST. RENDER</span>
+          <span id="distText">1,800 M</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta Inferior Derecha: Arsenal Táctico -->
+    <div id="weaponCard">
+      <div id="weaponName" class="weapon-name">MK17 SCAR-H 7.62MM</div>
+      <div id="weaponSpecs" class="weapon-specs">7.62x51 NATO // MIRA HOLOGRÁFICA</div>
+      <div class="ammo-display">
+        <span id="ammoMag">20</span>
+        <span class="reserve">/ <span id="ammoReserve">120</span></span>
+      </div>
+      <div class="equipment-pills">
+        <div id="pillFireMode" class="eq-pill active">AUTO [B]</div>
+        <div id="pillSuppressor" class="eq-pill active">SUPRESOR ON [U]</div>
+        <div id="pillC4" class="eq-pill">C4 [G]</div>
+        <div id="pillVision" class="eq-pill">DÍA [N/T]</div>
+      </div>
+    </div>
+
+    <!-- Cinta Dinámica de Ayuda [F1] -->
+    <div id="controlsOverlay"></div>
+  </div>
+
+  <!-- PANTALLAS TÁCTICAS DE VIDEOJUEGO DETRÁS DE KEYBINDS ([ESC], [I], [K], [M]/[TAB]) -->
+  <div id="tacticalModal">
+    <div id="modalPanel">
+      <div class="modal-header">
+        <div id="modalDynamicTitle" class="modal-title">
+          <span>◈</span> UNTRACED: CONVERGENCE // MENÚ TÁCTICO
+        </div>
+        <button id="btnCloseModal" class="pill-btn" style="padding:4px 12px;">✕ VOLVER [ESC]</button>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn" data-tab="tabSettings">[ESC] PAUSA & CONTROLES</button>
+        <button class="modal-tab-btn" data-tab="tabLoadout">[I] ARMERÍA & MIXAMO</button>
+        <button class="modal-tab-btn" data-tab="tabVehicles">[K] APOYO Y VEHÍCULOS</button>
+        <button class="modal-tab-btn" data-tab="tabEnvironment">[M] MAPA & ENTORNO</button>
+      </div>
+
+      <div class="modal-content">
+        <!-- Pestaña [ESC]: Pausa, Gráficos, Audio & Remapeo de Controles -->
+        <div id="tabSettings" class="tab-page">
+          <div class="section-title">CÁMARA SOBRE EL HOMBRO & ZEN BROWSER</div>
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Sensibilidad del Ratón</span>
+              <small>Velocidad de giro de cámara OTS y apuntado</small>
+            </div>
+            <div class="slider-input-group">
+              <input type="range" id="slSens" min="10" max="100" value="42">
+              <span id="valSens" class="slider-val">42</span>
+            </div>
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Invertir Eje Vertical (Pitch)</span>
+              <small>Invierte mirar arriba/abajo con el ratón</small>
+            </div>
+            <div class="slider-input-group" style="justify-content: flex-end;">
+              <input type="checkbox" id="chkInvertY" style="width:20px; height:20px; accent-color:var(--accent-cyan); cursor:pointer;">
+            </div>
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Modo de Apuntado ADS (Clic Derecho)</span>
+              <small>Desmarcado: Mantener (GRW clásico) · Marcado: Alternar</small>
+            </div>
+            <div class="slider-input-group" style="justify-content: flex-end;">
+              <input type="checkbox" id="chkToggleAds" style="width:20px; height:20px; accent-color:var(--accent-cyan); cursor:pointer;">
+            </div>
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Tecla [ALT]: Soltar Mouse Temporalmente</span>
+              <small>Mantén ALT para liberar puntero en Zen Browser sin abrir menús</small>
+            </div>
+            <div class="slider-input-group" style="justify-content: flex-end;">
+              <input type="checkbox" id="chkAltFree" checked style="width:20px; height:20px; accent-color:var(--accent-cyan); cursor:pointer;">
+            </div>
+          </div>
+
+          <div class="section-title">ASIGNACIÓN DE CONTROLES (KEYBINDS Y BOTONES DE MOUSE)</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">
+            <span>Haz clic en cualquier botón asignado y presiona la tecla o botón del pulgar (M4/M5) deseado.</span>
+            <button id="btnResetKeybinds" class="pill-btn" style="padding:4px 10px;">↺ RESTAURAR POR DEFECTO</button>
+          </div>
+          <div id="keybindEditorGrid" class="keybind-grid"></div>
+
+          <div class="section-title">GRÁFICOS, ILUMINACIÓN & AUDIO</div>
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>God Rays (Rayos Crepusculares)</span>
+              <small>Resplandor solar volumétrico entre montañas y copas</small>
+            </div>
+            <div class="slider-input-group" style="justify-content: flex-end;">
+              <input type="checkbox" id="chkGodRays" checked style="width:20px; height:20px; accent-color:var(--accent-cyan); cursor:pointer;">
+            </div>
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Transluminiscencia Foliar (SSS)</span>
+              <small>Luz solar atravesando copas de alerces y piornales</small>
+            </div>
+            <div class="slider-input-group" style="justify-content: flex-end;">
+              <input type="checkbox" id="chkSSS" checked style="width:20px; height:20px; accent-color:var(--accent-cyan); cursor:pointer;">
+            </div>
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Distancia de Renderizado</span>
+              <small>Alcance visual de la cordillera de Champsaur (600m - 2200m)</small>
+            </div>
+            <div class="slider-input-group">
+              <input type="range" id="slRenderDist" min="600" max="2200" step="100" value="1800">
+              <span id="valRenderDist" class="slider-val">1800m</span>
+            </div>
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Audio Táctico Procedimental (Web Audio API)</span>
+              <small>Inicia muteado por defecto · Pasos, disparos, motores y rotores</small>
+            </div>
+            <div class="slider-input-group" style="justify-content: flex-end;">
+              <input type="checkbox" id="chkAudio" style="width:20px; height:20px; accent-color:var(--accent-cyan); cursor:pointer;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Pestaña [I]: Armería, Malla Continua 3D, IK y Mixamo -->
+        <div id="tabLoadout" class="tab-page">
+          <div class="section-title">CAMUFLAJE DEL UNIFORME RIPSTOP & CHALECO</div>
+          <div class="options-grid" id="optCamo">
+            <div class="opt-card selected" data-camo="alpine">
+              <h4>MULTICAM ALPINO</h4>
+              <p>Ocre, gris piedra y verde musgo para media y alta montaña.</p>
+            </div>
+            <div class="opt-card" data-camo="sierra">
+              <h4>SIERRA KHAKI</h4>
+              <p>Árido cálido de crestas secas y canchal calizo.</p>
+            </div>
+            <div class="opt-card" data-camo="woodland">
+              <h4>FOREST WOODLAND</h4>
+              <p>Verde conífera profundo ideal bajo bosque de pino silvestre.</p>
+            </div>
+            <div class="opt-card" data-camo="blackops">
+              <h4>BLACK OPS NIGHT</h4>
+              <p>Gris carbón mate para infiltración nocturna y NVG.</p>
+            </div>
+          </div>
+
+          <div class="section-title">EQUIPAMIENTO DE CABEZA & ARSENAL</div>
+          <div class="options-grid" id="optHead">
+            <div class="opt-card selected" data-head="fast">
+              <h4>CASCO FAST + GPNVG-18</h4>
+              <p>Visor panorámico de 4 tubos (desciende al activar NVG [N]).</p>
+            </div>
+            <div class="opt-card" data-head="boonie">
+              <h4>BOONIE SNIPER</h4>
+              <p>Sombrero táctico de ala blanda para romper silueta en piornal.</p>
+            </div>
+            <div class="opt-card" data-head="balaclava">
+              <h4>BALACLAVA & COMTAC</h4>
+              <p>Pasamontañas térmico ligero con auriculares balísticos.</p>
+            </div>
+          </div>
+
+          <div class="options-grid" id="optWeapon">
+            <div class="opt-card selected" data-weapon="mk17">
+              <h4>FUSIL MK17 SCAR-H CQC</h4>
+              <p>7.62mm automático/semi con mira holográfica y supresor QD.</p>
+            </div>
+            <div class="opt-card" data-weapon="m40a5">
+              <h4>FRANCOTIRADOR M40A5</h4>
+              <p>Cerrojo de alta precisión, zoom profundo ADS y largo alcance.</p>
+            </div>
+          </div>
+
+          <div class="section-title">ESQUELETO 3D CONTINUO, CINEMÁTICA INVERSA (IK) Y CLIPS MIXAMO</div>
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Densidad de Malla Continua Soldada</span>
+              <small>Geometría deformable GPU LBS (20 huesos) · Sin cortes tipo bloque</small>
+            </div>
+            <div class="slider-input-group" style="justify-content:flex-end; gap:8px;">
+              <button class="pill-btn" data-mesh-res="std">ESTÁNDAR</button>
+              <button class="pill-btn active" data-mesh-res="high">ALTA</button>
+              <button class="pill-btn" data-mesh-res="ultra">ULTRA</button>
+            </div>
+          </div>
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Capas de Cinemática Inversa (Foot IK / Grip IK / Look IK)</span>
+              <small>Anclaje de pies a pendientes, agarre de rifle y torsión de torso al apuntar</small>
+            </div>
+            <div class="slider-input-group" style="justify-content:flex-end; gap:14px; font-family:var(--font-mono); font-size:11px;">
+              <label style="cursor:pointer;"><input type="checkbox" id="chkFootIK" checked> Pies IK</label>
+              <label style="cursor:pointer;"><input type="checkbox" id="chkHandIK" checked> Manos IK</label>
+              <label style="cursor:pointer;"><input type="checkbox" id="chkLookIK" checked> Look-At IK</label>
+            </div>
+          </div>
+
+          <div class="section-title">IMPORTADOR OFFLINE DE ANIMACIONES / MODELOS MIXAMO (.GLB / .GLTF)</div>
+          <div id="glbDropZone" class="glb-drop">
+            Arrastra aquí cualquier personaje o clip exportado de Mixamo (.glb / .gltf), o haz clic para seleccionar archivo
+            <input type="file" id="glbFileInput" accept=".glb,.gltf" style="display:none;">
+          </div>
+          <div id="glbReport" style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim); margin-bottom:8px;">
+            Clips integrados activos: <b>Mixamo Idle / Walk / Run</b> + mezcla táctica ADS / Agachado / Prone / Recarga.
+          </div>
+          <div id="glbClipActions" style="display:none; gap:8px; flex-wrap:wrap; margin-bottom:8px;">
+            <select id="selImportedClip" style="background:#0c141d; color:#e2e8f0; border:1px solid var(--panel-border); padding:5px 8px; font-family:var(--font-mono); font-size:11px;"></select>
+            <button id="btnApplyImportedClip" class="pill-btn active">▶ APLICAR CLIP MIXAMO EN VIVO</button>
+            <button id="btnClearImportedClip" class="pill-btn">↺ VOLVER A CLIPS TÁCTICOS</button>
+            <button id="btnDownloadImportedJS" class="pill-btn">⬇ EXPORTAR MÓDULO .JS</button>
+          </div>
+        </div>
+
+        <!-- Pestaña [K]: Apoyo y Vehículos -->
+        <div id="tabVehicles" class="tab-page">
+          <div class="section-title">DESPLIEGUE DE TRANSPORTE & INSERCIÓN</div>
+          <div class="options-grid">
+            <div class="opt-card" id="btnSpawnBuggy">
+              <h4>BUGGY 4X4 (POLARIS MRZR)</h4>
+              <p>Control directo del buggy con suspensión 4WD adaptativa al terreno.</p>
+            </div>
+            <div class="opt-card" id="btnSpawnHeli">
+              <h4>LITTLE BIRD MH-6</h4>
+              <p>Vuelo táctico [Espacio: subir · Shift: bajar · Q/E: guiñada · WASD: inclinar].</p>
+            </div>
+            <div class="opt-card" id="btnSpawnFoot">
+              <h4>VOLVER A PIE (OPERADOR)</h4>
+              <p>Desembarque táctico inmediato con cámara al hombro.</p>
+            </div>
+          </div>
+
+          <div class="section-title">SOPORTE DE CAMPO & OBJETIVOS</div>
+          <div class="options-grid">
+            <div class="opt-card" id="btnRecallVehicles">
+              <h4>REAGRUPAR VEHÍCULOS AQUÍ</h4>
+              <p>Reposiciona el Buggy y el Little Bird sobre el terreno junto al operador.</p>
+            </div>
+            <div class="opt-card" id="btnResetTargets">
+              <h4>REINICIAR PATRULLA DEL PUESTO</h4>
+              <p>Reaparece la escuadra de reconocimiento enemiga para prácticas de tiro.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pestaña [M] / [TAB]: Mapa Táctico & Atmósfera -->
+        <div id="tabEnvironment" class="tab-page">
+          <div class="map-wrap">
+            <div>
+              <div class="section-title">RADAR TÁCTICO DE SECTOR</div>
+              <canvas id="tacticalMapCanvas" width="320" height="240"></canvas>
+            </div>
+            <div style="flex:1; min-width:260px;">
+              <div class="section-title">HORA SOLAR EN VALLE DE CHAMPSAUR</div>
+              <div class="options-grid" id="optTod" style="grid-template-columns:1fr 1fr;">
+                <div class="opt-card selected" data-tod="0">
+                  <h4>TARDE DORADA</h4>
+                  <p>Luz rasante cálida + God Rays frontales.</p>
+                </div>
+                <div class="opt-card" data-tod="1">
+                  <h4>MEDIODÍA ALPINO</h4>
+                  <p>Visibilidad máxima en altas cumbres.</p>
+                </div>
+                <div class="opt-card" data-tod="2">
+                  <h4>CREPÚSCULO</h4>
+                  <p>Contraste cobrizo de fin de jornada.</p>
+                </div>
+                <div class="opt-card" data-tod="3">
+                  <h4>NOCHE TÁCTICA</h4>
+                  <p>Oscuridad para GPNVG-18 [N] y FLIR [T].</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-title">CONDICIONES METEOROLÓGICAS</div>
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Capa de Nubes Bajas de Valle</span>
+              <small>Niebla orográfica abrazando laderas</small>
+            </div>
+            <div class="slider-input-group">
+              <input type="range" id="slCloudDensity" min="0" max="100" value="65">
+              <span id="valCloudDensity" class="slider-val">65%</span>
+            </div>
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Viento en Todo el Follaje</span>
+              <small>Ráfagas dinámicas sobre piornales, pino silvestre y alerces</small>
+            </div>
+            <div class="slider-input-group">
+              <input type="range" id="slWind" min="0" max="100" value="58">
+              <span id="valWind" class="slider-val">58%</span>
+            </div>
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Ciclo Día / Noche Automático</span>
+              <small>Órbita solar continua, cielo nocturno y encendido de faros</small>
+            </div>
+            <input type="checkbox" id="chkDayCycle" style="width:20px; height:20px; accent-color:var(--accent-cyan); cursor:pointer;">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Velocidad del Ciclo Horario</span>
+              <small>Acelerador temporal (0.2x - 4.0x) cuando el ciclo está activo</small>
+            </div>
+            <div class="slider-input-group">
+              <input type="range" id="slCycleSpeed" min="2" max="40" value="12">
+              <span id="valCycleSpeed" class="slider-val">1.2x</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div id="modalFooterHint" style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">
+          [ESC] Pausa · [I] Armería · [K] Vehículos · [M] Mapa · [Botón Pulgar / H] Cambiar Hombro
+        </div>
+        <button id="btnResumeGame" class="btn-action">VOLVER AL COMBATE ➔</button>
+      </div>
+    </div>
+  </div>
+

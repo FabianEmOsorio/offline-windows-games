@@ -1,0 +1,847 @@
+    :root {
+      --bg-dark: #080c10;
+      --panel-bg: rgba(10, 16, 22, 0.88);
+      --panel-border: rgba(0, 229, 255, 0.28);
+      --accent-cyan: #00e5ff;
+      --accent-amber: #ffb300;
+      --accent-gold: #f59e0b;
+      --accent-red: #ff3d00;
+      --accent-emerald: #10b981;
+      --text-main: #e2e8f0;
+      --text-dim: #94a3b8;
+      --font-mono: 'Consolas', 'Courier New', monospace;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background-color: var(--bg-dark);
+      font-family: var(--font-sans);
+      color: var(--text-main);
+      cursor: default;
+    }
+
+    #gameCanvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: block;
+      z-index: 1;
+    }
+
+    /* ==========================================================================
+       AAA TACTICAL HUD (GHOST RECON STYLE)
+       ========================================================================== */
+    #hudContainer {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    .interactive { pointer-events: auto; }
+
+    #postOverlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      transition: opacity 0.25s ease;
+    }
+    #postOverlay.nvg {
+      background: radial-gradient(circle at center, transparent 35%, rgba(0, 30, 0, 0.6) 80%, rgba(0, 15, 0, 0.95) 100%);
+      box-shadow: inset 0 0 100px rgba(0, 255, 60, 0.25);
+    }
+    #postOverlay.flir {
+      background: radial-gradient(circle at center, transparent 40%, rgba(10, 15, 30, 0.65) 85%, rgba(5, 8, 15, 0.95) 100%);
+    }
+
+    /* Brújula Táctica Superior */
+    #compassTape {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 480px;
+      height: 48px;
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 4px;
+      clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%, 0 12px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 0 12px rgba(0, 229, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    #compassRibbon {
+      width: 100%;
+      height: 24px;
+      position: relative;
+      overflow: hidden;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--accent-cyan);
+    }
+    #compassMarks {
+      position: absolute;
+      top: 3px;
+      left: 0;
+      height: 18px;
+      white-space: nowrap;
+      transition: transform 0.05s linear;
+      display: flex;
+      align-items: center;
+    }
+    #compassIndicator {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: var(--accent-amber);
+      box-shadow: 0 0 6px var(--accent-amber);
+    }
+    #sectorInfo {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      padding-bottom: 2px;
+    }
+
+    /* Card Inferior Izquierda: Operador & Camuflaje */
+    #operatorCard {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      min-width: 310px;
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+      padding: 14px 18px;
+      border-radius: 4px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+    }
+    .hud-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 4px;
+    }
+    .hud-callsign {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hud-mode-pill {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 2px;
+      background: rgba(0, 229, 255, 0.15);
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+    .bar-row {
+      margin: 6px 0;
+    }
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-bottom: 3px;
+    }
+    .bar-track {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 100%;
+      background: var(--accent-emerald);
+      transition: width 0.15s ease, background 0.25s ease;
+    }
+
+    .telemetry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-family: var(--font-mono);
+      font-size: 11px;
+    }
+    .telemetry-item span:first-child {
+      color: var(--text-dim);
+      font-size: 9px;
+      display: block;
+      letter-spacing: 0.5px;
+    }
+    .telemetry-item span:last-child {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* Card Inferior Derecha: Arsenal Táctico */
+    #weaponCard {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      min-width: 290px;
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      clip-path: polygon(16px 0, 100% 0, 100% 100%, 0 100%, 0 16px);
+      padding: 14px 18px;
+      border-radius: 4px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      text-align: right;
+    }
+    .weapon-name {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--accent-amber);
+    }
+    .weapon-specs {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .ammo-display {
+      font-family: var(--font-mono);
+      font-size: 34px;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--text-main);
+      display: flex;
+      justify-content: flex-end;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .ammo-display span.reserve {
+      font-size: 16px;
+      color: var(--text-dim);
+    }
+    .equipment-pills {
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+      margin-top: 10px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+    }
+    .eq-pill {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 3px 7px;
+      border-radius: 2px;
+      color: var(--text-main);
+    }
+    .eq-pill.active {
+      border-color: var(--accent-cyan);
+      background: rgba(0, 229, 255, 0.12);
+      color: var(--accent-cyan);
+    }
+
+    /* Barra Superior Derecha Minimalista (se atenúa durante el combate) */
+    #quickRibbon {
+      position: absolute;
+      top: 14px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      transition: opacity 0.25s ease;
+    }
+    #quickRibbon.locked-dim { opacity: 0.42; }
+    .pill-btn {
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      padding: 5px 12px;
+      border-radius: 3px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.15s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .pill-btn:hover {
+      background: rgba(0, 229, 255, 0.15);
+      border-color: var(--accent-cyan);
+      color: #fff;
+    }
+    .pill-btn.active {
+      background: rgba(0, 229, 255, 0.20);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+    .nav-strip {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .kb-chip {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      background: rgba(8, 12, 16, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 3px 8px;
+      border-radius: 2px;
+      cursor: pointer;
+      pointer-events: auto;
+      transition: all 0.15s ease;
+    }
+    .kb-chip:hover { border-color: var(--accent-cyan); color: #fff; }
+    .kb-chip strong { color: var(--accent-amber); }
+
+    /* Retícula Táctica Dinámica GRW (se contrae al apuntar ADS) */
+    #crosshair {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      width: 44px;
+      height: 44px;
+      --spread: 11px;
+      opacity: 0.88;
+      transition: opacity 0.15s ease;
+    }
+    #crosshair.ads { --spread: 4px; opacity: 0.96; }
+    #crosshair.sprint { --spread: 19px; opacity: 0.45; }
+    .ch-tick {
+      position: absolute;
+      background: var(--accent-cyan);
+      box-shadow: 0 0 5px rgba(0, 229, 255, 0.75);
+      transition: transform 0.08s ease-out;
+    }
+    .ch-t { top: 50%; left: 50%; width: 2px; height: 7px; transform: translate(-50%, calc(-100% - var(--spread))); }
+    .ch-b { top: 50%; left: 50%; width: 2px; height: 7px; transform: translate(-50%, var(--spread)); }
+    .ch-l { top: 50%; left: 50%; width: 7px; height: 2px; transform: translate(calc(-100% - var(--spread)), -50%); }
+    .ch-r { top: 50%; left: 50%; width: 7px; height: 2px; transform: translate(var(--spread), -50%); }
+    #crosshairDot {
+      position: absolute;
+      top: 50%; left: 50%; width: 4px; height: 4px;
+      transform: translate(-50%, -50%);
+      background: var(--accent-amber);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--accent-amber);
+    }
+    #hitMarker {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 18px; height: 18px;
+      transform: translate(-50%, -50%) rotate(45deg);
+      opacity: 0;
+      transition: opacity 0.12s ease, transform 0.12s ease;
+      pointer-events: none;
+    }
+    #hitMarker::before, #hitMarker::after {
+      content: '';
+      position: absolute;
+      background: #f1f5f9;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+    }
+    #hitMarker::before { top: 8px; left: 0; width: 18px; height: 2px; }
+    #hitMarker::after  { left: 8px; top: 0; width: 2px; height: 18px; }
+    #hitMarker.show { opacity: 1; }
+    #hitMarker.kill {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1.38);
+    }
+    #hitMarker.kill::before, #hitMarker.kill::after {
+      background: #ff2b2b;
+      box-shadow: 0 0 12px #ff2b2b;
+    }
+
+    /* Panel Rápido de Controles [F1] */
+    #controlsOverlay {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(8, 13, 19, 0.92);
+      border: 1px solid var(--panel-border);
+      border-radius: 4px;
+      padding: 10px 16px;
+      display: none;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 720px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      font-family: var(--font-mono);
+      font-size: 10px;
+    }
+    #controlsOverlay.active { display: flex; }
+    .ctrl-tag { color: var(--text-dim); }
+    .ctrl-tag b { color: var(--accent-cyan); font-weight: 700; }
+
+    /* Cursor libre Zen notification */
+    #altFreeToast {
+      position: absolute;
+      top: 72px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(10, 18, 26, 0.88);
+      border: 1px solid var(--accent-emerald);
+      color: var(--accent-emerald);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border-radius: 3px;
+      display: none;
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       MENÚS TÁCTICOS DE VIDEOJUEGO DETRÁS DE KEYBINDS ([ESC], [I], [K], [M])
+       ========================================================================== */
+    #tacticalModal {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(5, 9, 14, 0.82);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      pointer-events: auto;
+    }
+    #tacticalModal.active { display: flex; }
+
+    #modalPanel {
+      width: 960px;
+      max-width: 95vw;
+      height: 670px;
+      max-height: 92vh;
+      background: var(--panel-bg);
+      border: 1px solid var(--accent-cyan);
+      box-shadow: 0 0 40px rgba(0, 229, 255, 0.2), inset 0 0 20px rgba(0, 0, 0, 0.8);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: modalFadeIn 0.18s ease-out;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-header {
+      padding: 14px 24px;
+      background: rgba(0, 229, 255, 0.08);
+      border-bottom: 1px solid var(--panel-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-title {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .modal-tabs {
+      display: flex;
+      gap: 4px;
+      padding: 8px 24px 0 24px;
+      background: rgba(0, 0, 0, 0.35);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      flex-wrap: wrap;
+    }
+    .modal-tab-btn {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 10px 16px;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .modal-tab-btn:hover { color: var(--text-main); }
+    .modal-tab-btn.active {
+      color: var(--accent-cyan);
+      border-bottom-color: var(--accent-cyan);
+      background: rgba(0, 229, 255, 0.06);
+    }
+
+    .modal-content {
+      flex: 1;
+      padding: 20px 24px;
+      overflow-y: auto;
+    }
+    .tab-page { display: none; }
+    .tab-page.active { display: block; }
+
+    .section-title {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--accent-amber);
+      text-transform: uppercase;
+      margin: 16px 0 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title:first-child { margin-top: 0; }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 179, 0, 0.25);
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .opt-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .opt-card:hover {
+      background: rgba(0, 229, 255, 0.08);
+      border-color: rgba(0, 229, 255, 0.4);
+    }
+    .opt-card.selected {
+      background: rgba(0, 229, 255, 0.15);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 12px rgba(0, 229, 255, 0.25);
+    }
+    .opt-card h4 {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .opt-card p {
+      font-size: 11px;
+      color: var(--text-dim);
+      line-height: 1.35;
+    }
+
+    .keybind-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+      gap: 8px;
+    }
+    .kb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+    }
+    .kb-btn {
+      background: rgba(0, 229, 255, 0.1);
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      color: var(--accent-cyan);
+      padding: 4px 10px;
+      border-radius: 3px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      min-width: 96px;
+      text-align: center;
+    }
+    .kb-btn.listening {
+      background: rgba(255, 179, 0, 0.22);
+      border-color: var(--accent-amber);
+      color: var(--accent-amber);
+      animation: pulseListen 0.8s infinite alternate;
+    }
+    @keyframes pulseListen { from { opacity: 0.7; } to { opacity: 1.0; } }
+
+    .glb-drop {
+      border: 1.5px dashed rgba(0, 229, 255, 0.45);
+      border-radius: 6px;
+      padding: 14px;
+      background: rgba(0, 229, 255, 0.04);
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    .glb-drop.drag { border-color: var(--accent-amber); background: rgba(255, 179, 0, 0.12); }
+    .map-wrap {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    #tacticalMapCanvas {
+      background: #0b131b;
+      border: 1px solid var(--panel-border);
+      border-radius: 4px;
+    }
+
+    .slider-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 4px;
+    }
+    .slider-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-main);
+      min-width: 240px;
+    }
+    .slider-label small {
+      display: block;
+      font-size: 10px;
+      color: var(--text-dim);
+    }
+    .slider-input-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+      max-width: 360px;
+    }
+    .slider-input-group input[type=range] {
+      flex: 1;
+      accent-color: var(--accent-cyan);
+      cursor: pointer;
+    }
+    .slider-val {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      min-width: 50px;
+      text-align: right;
+    }
+
+    .modal-footer {
+      padding: 12px 24px;
+      background: rgba(0, 0, 0, 0.45);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-action {
+      background: var(--accent-cyan);
+      color: #04080e;
+      border: none;
+      padding: 9px 22px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-action:hover {
+      background: #33eeff;
+      box-shadow: 0 0 16px rgba(0, 229, 255, 0.5);
+    }
+
+    #interactPrompt {
+      position: absolute;
+      top: 61%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--panel-bg);
+      border: 1px solid var(--accent-amber);
+      color: var(--accent-amber);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 7px 16px;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      display: none;
+      pointer-events: none;
+    }
+
+    #damageVignette {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at center, transparent 54%, rgba(215, 28, 28, 0.72) 100%);
+      opacity: 0;
+      transition: opacity 0.12s ease-out;
+      z-index: 3;
+    }
+
+    #killFeedBanner {
+      position: absolute;
+      top: 102px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      background: rgba(14, 20, 28, 0.88);
+      border: 1px solid rgba(255, 68, 51, 0.75);
+      border-left: 4px solid #ff3b30;
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      padding: 6px 16px;
+      border-radius: 3px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+    #killFeedBanner.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    #killFeedBanner.headshot {
+      border-color: var(--accent-amber);
+      border-left-color: #ff2b2b;
+      color: #ffe29a;
+    }
+    #killFeedBanner.objective {
+      border-color: var(--accent-emerald);
+      border-left-color: var(--accent-emerald);
+      color: #c8ffe3;
+    }
+
+    #hudMarkersLayer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .hud-marker {
+      position: absolute;
+      transform: translate(-50%, -100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 800;
+      text-shadow: 0 1px 4px #000;
+      pointer-events: none;
+    }
+    .hud-marker-badge {
+      padding: 1px 6px;
+      border-radius: 2px;
+      background: rgba(6, 10, 15, 0.8);
+      border: 1px solid currentColor;
+      letter-spacing: 0.8px;
+      line-height: 1.25;
+    }
+    .hud-marker-diamond {
+      width: 9px;
+      height: 9px;
+      transform: rotate(45deg);
+      border: 1.5px solid currentColor;
+      background: rgba(6, 10, 15, 0.65);
+      box-shadow: 0 0 8px currentColor;
+    }
+    .hud-marker.spotted { color: #ff4f42; }
+    .hud-marker.suspicious { color: #ffb300; }
+    .hud-marker.combat { color: #ff2b2b; }
+    .hud-marker.barrel { color: #ff7a33; }
+    .hud-marker.generator { color: #00e5ff; }
+    .hud-marker-dist {
+      font-size: 9px;
+      color: rgba(235, 245, 255, 0.82);
+    }
+
+    #sectorStatusBar {
+      position: absolute;
+      top: 68px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      pointer-events: none;
+    }
+    @media (max-width: 1360px) {
+      #compassTape { left: 16px; transform: none; }
+    }
+    .sector-pill {
+      background: rgba(8, 13, 19, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 3px 10px;
+      border-radius: 3px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.9px;
+      color: var(--text-dim);
+    }
+    .sector-pill b { color: var(--accent-cyan); }
+    .sector-pill.alert { border-color: #ff3b30; color: #ff9c94; }
+    .sector-pill.cleared { border-color: var(--accent-emerald); color: #8dffbe; }

@@ -1,0 +1,2657 @@
+{
+  "meta": {
+    "format_version": "4.5",
+    "creation_time": 1794600385,
+    "model_format": "free",
+    "box_uv": false
+  },
+  "name": "buggy_tactico_4x4",
+  "geometry_name": "buggy_tactico_4x4",
+  "visible_box": [
+    48,
+    64,
+    48
+  ],
+  "resolution": {
+    "width": 64,
+    "height": 64
+  },
+  "elements": [
+    {
+      "name": "chasis_plataforma",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -8,
+        2,
+        -16
+      ],
+      "to": [
+        8,
+        5,
+        16
+      ],
+      "autouv": 0,
+      "color": 1,
+      "origin": [
+        0,
+        3.5,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "5068c182-a1b9-4982-849d-e57d8665d08e"
+    },
+    {
+      "name": "placa_proteccion_suelo",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -6,
+        1.2,
+        -14
+      ],
+      "to": [
+        6,
+        2.2,
+        14
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        0,
+        1.7,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "7063c046-c3b3-431a-bece-0b33bc2d55e0"
+    },
+    {
+      "name": "parachoques_defensa",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -9,
+        3,
+        16
+      ],
+      "to": [
+        9,
+        7,
+        18
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        0,
+        5,
+        17
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "3d1be877-eb03-41cd-97f6-3a9ee02ff348"
+    },
+    {
+      "name": "cabrestante_winch",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -3,
+        4,
+        18
+      ],
+      "to": [
+        3,
+        6.5,
+        20
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        0,
+        5.2,
+        19
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "48429f0a-2755-4151-a396-b12c293170b6"
+    },
+    {
+      "name": "capo_motor",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -7,
+        5,
+        4
+      ],
+      "to": [
+        7,
+        8,
+        16
+      ],
+      "autouv": 0,
+      "color": 1,
+      "origin": [
+        0,
+        6.5,
+        10
+      ],
+      "rotation": [
+        5,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "dd70f9a3-40c5-4d18-b7c9-bafa49f8d492"
+    },
+    {
+      "name": "parrilla_radiador",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -6,
+        4.5,
+        16.1
+      ],
+      "to": [
+        6,
+        7.5,
+        16.6
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        0,
+        6,
+        16.3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "8c71ad68-4406-4414-87db-fcfd4d841b70"
+    },
+    {
+      "name": "faro_led_izq",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -6.5,
+        6,
+        16.2
+      ],
+      "to": [
+        -4,
+        7.5,
+        16.8
+      ],
+      "autouv": 0,
+      "color": 6,
+      "origin": [
+        -5.2,
+        6.7,
+        16.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "17178360-d3de-46fb-8feb-aca273e9ed1e"
+    },
+    {
+      "name": "faro_led_der",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        4,
+        6,
+        16.2
+      ],
+      "to": [
+        6.5,
+        7.5,
+        16.8
+      ],
+      "autouv": 0,
+      "color": 6,
+      "origin": [
+        5.2,
+        6.7,
+        16.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "2acea547-ec07-4a32-9d7c-3fe8b4a26be1"
+    },
+    {
+      "name": "salpicadero_consola",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -7,
+        7,
+        3
+      ],
+      "to": [
+        7,
+        10,
+        5
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        0,
+        8.5,
+        4
+      ],
+      "rotation": [
+        -12,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "01f64318-acaa-4207-953f-b2eb2d47901d"
+    },
+    {
+      "name": "volante_direccion",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -4.2,
+        9.2,
+        2.2
+      ],
+      "to": [
+        -1.8,
+        11.2,
+        2.6
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        -3,
+        10.2,
+        2.4
+      ],
+      "rotation": [
+        -24,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "a42848e1-93c8-442b-8ab7-248dbfec40fe"
+    },
+    {
+      "name": "asiento_baquet_izq",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -6.5,
+        4.5,
+        -4
+      ],
+      "to": [
+        -1.5,
+        12,
+        1
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        -4,
+        8,
+        -1.5
+      ],
+      "rotation": [
+        -8,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "489bdfb8-9231-4571-8d79-fe2f9e5ae43c"
+    },
+    {
+      "name": "asiento_baquet_der",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        1.5,
+        4.5,
+        -4
+      ],
+      "to": [
+        6.5,
+        12,
+        1
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        4,
+        8,
+        -1.5
+      ],
+      "rotation": [
+        -8,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "0371889a-aca5-43ee-a703-a3891cd252aa"
+    },
+    {
+      "name": "jaula_pilar_frontal_izq",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -7.5,
+        6.5,
+        4
+      ],
+      "to": [
+        -6.5,
+        16.5,
+        5
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        -7,
+        11.5,
+        4.5
+      ],
+      "rotation": [
+        -12,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "3ebe7c6a-ea87-4b78-966c-fcb29f312e8a"
+    },
+    {
+      "name": "jaula_pilar_frontal_der",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        6.5,
+        6.5,
+        4
+      ],
+      "to": [
+        7.5,
+        16.5,
+        5
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        7,
+        11.5,
+        4.5
+      ],
+      "rotation": [
+        -12,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "8a7450e2-f0fc-49a3-813e-3c7ddb2c7f92"
+    },
+    {
+      "name": "jaula_techo_marco",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -7.5,
+        16,
+        -10
+      ],
+      "to": [
+        7.5,
+        17,
+        4
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        0,
+        16.5,
+        -3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "e9b4daa0-a64d-4ea8-ad47-1adc9977ca78"
+    },
+    {
+      "name": "jaula_pilar_trasero_izq",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -7.5,
+        5,
+        -14
+      ],
+      "to": [
+        -6.5,
+        16.5,
+        -10
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        -7,
+        10.7,
+        -12
+      ],
+      "rotation": [
+        22,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "de9263f6-805d-47c5-8233-42ba3e8872a8"
+    },
+    {
+      "name": "jaula_pilar_trasero_der",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        6.5,
+        5,
+        -14
+      ],
+      "to": [
+        7.5,
+        16.5,
+        -10
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        7,
+        10.7,
+        -12
+      ],
+      "rotation": [
+        22,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "4c06defd-5b0d-4a37-aac6-bb5643e7a0b5"
+    },
+    {
+      "name": "barra_led_techo",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -6.5,
+        17,
+        3
+      ],
+      "to": [
+        6.5,
+        18.5,
+        4.2
+      ],
+      "autouv": 0,
+      "color": 6,
+      "origin": [
+        0,
+        17.7,
+        3.6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "33f0db9a-b8bb-4930-816c-5577697db029"
+    },
+    {
+      "name": "plataforma_carga",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -7.5,
+        5,
+        -15
+      ],
+      "to": [
+        7.5,
+        6,
+        -5
+      ],
+      "autouv": 0,
+      "color": 1,
+      "origin": [
+        0,
+        5.5,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "ee2fb698-b400-47e5-8e67-55ec18418d92"
+    },
+    {
+      "name": "laterales_caja",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -7.8,
+        6,
+        -15
+      ],
+      "to": [
+        7.8,
+        8.5,
+        -5
+      ],
+      "autouv": 0,
+      "color": 1,
+      "origin": [
+        0,
+        7.2,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "35175b75-755c-49c7-97fb-e7cc0f9755de"
+    },
+    {
+      "name": "rueda_repuesto",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -3.5,
+        9,
+        -15.5
+      ],
+      "to": [
+        3.5,
+        15,
+        -12.5
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        0,
+        12,
+        -14
+      ],
+      "rotation": [
+        25,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "073c749e-7fba-4a2e-ad9a-10e381fa9229"
+    },
+    {
+      "name": "caja_municion_762",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -6,
+        6,
+        -11
+      ],
+      "to": [
+        -1.5,
+        9.5,
+        -7
+      ],
+      "autouv": 0,
+      "color": 2,
+      "origin": [
+        -3.7,
+        7.7,
+        -9
+      ],
+      "rotation": [
+        0,
+        10,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "92b0ff2b-30d5-4127-9373-ff6aaff69f52"
+    },
+    {
+      "name": "bidon_combustible",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        2,
+        6,
+        -12
+      ],
+      "to": [
+        5.5,
+        11,
+        -8
+      ],
+      "autouv": 0,
+      "color": 7,
+      "origin": [
+        3.7,
+        8.5,
+        -10
+      ],
+      "rotation": [
+        0,
+        -5,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "191ab4af-1f6d-4380-b523-e23e6ea90f89"
+    },
+    {
+      "name": "rueda_delantera_izq_neumatico",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -12.2,
+        -1,
+        6.5
+      ],
+      "to": [
+        -7.8,
+        8,
+        15.5
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        -10,
+        3.5,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "bdb7d0bf-29cc-435f-b0d4-2c038c3e1097"
+    },
+    {
+      "name": "rueda_delantera_izq_rin_aluminio",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -12.4,
+        0.7,
+        8.2
+      ],
+      "to": [
+        -7.6,
+        6.3,
+        13.8
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        -10,
+        3.5,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "5a27dc95-478f-4948-b12c-0befc8d22283"
+    },
+    {
+      "name": "rueda_delantera_der_neumatico",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        7.8,
+        -1,
+        6.5
+      ],
+      "to": [
+        12.2,
+        8,
+        15.5
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        10,
+        3.5,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "8cc09bf4-2487-4b2f-9a32-20c96bcee75a"
+    },
+    {
+      "name": "rueda_delantera_der_rin_aluminio",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        7.6,
+        0.7,
+        8.2
+      ],
+      "to": [
+        12.4,
+        6.3,
+        13.8
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        10,
+        3.5,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "1018f46d-1b96-4e3c-a45a-0e24c64475f2"
+    },
+    {
+      "name": "rueda_trasera_izq_neumatico",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -12.2,
+        -1,
+        -14.5
+      ],
+      "to": [
+        -7.8,
+        8,
+        -5.5
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        -10,
+        3.5,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "e6c5a3b8-f735-40ed-b0a6-e6415afb6971"
+    },
+    {
+      "name": "rueda_trasera_izq_rin_aluminio",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -12.4,
+        0.7,
+        -12.8
+      ],
+      "to": [
+        -7.6,
+        6.3,
+        -7.2
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        -10,
+        3.5,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "cf47fd4a-258e-4b8d-9aca-37f1989dd8b1"
+    },
+    {
+      "name": "rueda_trasera_der_neumatico",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        7.8,
+        -1,
+        -14.5
+      ],
+      "to": [
+        12.2,
+        8,
+        -5.5
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        10,
+        3.5,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "98c2d2e4-db46-4c05-8d5b-eccabdf62d28"
+    },
+    {
+      "name": "rueda_trasera_der_rin_aluminio",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        7.6,
+        0.7,
+        -12.8
+      ],
+      "to": [
+        12.4,
+        6.3,
+        -7.2
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        10,
+        3.5,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "354b879d-bb05-4461-83a6-9514597ae39d"
+    }
+  ],
+  "outliner": [
+    {
+      "name": "chassis_group",
+      "origin": [
+        0,
+        3.5,
+        0
+      ],
+      "color": 0,
+      "uuid": "e02a0d72-b294-49e3-a399-85d65e9df28f",
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "visibility": true,
+      "autouv": 0,
+      "children": [
+        "5068c182-a1b9-4982-849d-e57d8665d08e",
+        "7063c046-c3b3-431a-bece-0b33bc2d55e0",
+        "3d1be877-eb03-41cd-97f6-3a9ee02ff348",
+        "48429f0a-2755-4151-a396-b12c293170b6"
+      ]
+    },
+    {
+      "name": "hood_group",
+      "origin": [
+        0,
+        6.5,
+        10
+      ],
+      "color": 0,
+      "uuid": "bb3eabe0-c74d-496c-a6b8-d7ae6f82e779",
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "visibility": true,
+      "autouv": 0,
+      "children": [
+        "dd70f9a3-40c5-4d18-b7c9-bafa49f8d492",
+        "8c71ad68-4406-4414-87db-fcfd4d841b70",
+        "17178360-d3de-46fb-8feb-aca273e9ed1e",
+        "2acea547-ec07-4a32-9d7c-3fe8b4a26be1"
+      ]
+    },
+    {
+      "name": "cockpit_group",
+      "origin": [
+        0,
+        8,
+        0
+      ],
+      "color": 0,
+      "uuid": "89317dcc-fbf8-44d4-bb04-3c64d4117b01",
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "visibility": true,
+      "autouv": 0,
+      "children": [
+        "01f64318-acaa-4207-953f-b2eb2d47901d",
+        "a42848e1-93c8-442b-8ab7-248dbfec40fe",
+        "489bdfb8-9231-4571-8d79-fe2f9e5ae43c",
+        "0371889a-aca5-43ee-a703-a3891cd252aa"
+      ]
+    },
+    {
+      "name": "roll_cage_group",
+      "origin": [
+        0,
+        11,
+        0
+      ],
+      "color": 0,
+      "uuid": "25f4f6c6-d0e8-4a93-8368-94bdcf31fdb5",
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "visibility": true,
+      "autouv": 0,
+      "children": [
+        "3ebe7c6a-ea87-4b78-966c-fcb29f312e8a",
+        "8a7450e2-f0fc-49a3-813e-3c7ddb2c7f92",
+        "e9b4daa0-a64d-4ea8-ad47-1adc9977ca78",
+        "de9263f6-805d-47c5-8233-42ba3e8872a8",
+        "4c06defd-5b0d-4a37-aac6-bb5643e7a0b5",
+        "33f0db9a-b8bb-4930-816c-5577697db029"
+      ]
+    },
+    {
+      "name": "cargo_bed_group",
+      "origin": [
+        0,
+        7,
+        -10
+      ],
+      "color": 0,
+      "uuid": "25e1bf5e-ee76-49ff-b5e1-3f35c47c6727",
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "visibility": true,
+      "autouv": 0,
+      "children": [
+        "ee2fb698-b400-47e5-8e67-55ec18418d92",
+        "35175b75-755c-49c7-97fb-e7cc0f9755de",
+        "073c749e-7fba-4a2e-ad9a-10e381fa9229",
+        "92b0ff2b-30d5-4127-9373-ff6aaff69f52",
+        "191ab4af-1f6d-4380-b523-e23e6ea90f89"
+      ]
+    },
+    {
+      "name": "wheel_front_left",
+      "origin": [
+        -10,
+        3.5,
+        11
+      ],
+      "color": 0,
+      "uuid": "6f96d50e-7493-4464-a7f7-4d8183306cac",
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "visibility": true,
+      "autouv": 0,
+      "children": [
+        "bdb7d0bf-29cc-435f-b0d4-2c038c3e1097",
+        "5a27dc95-478f-4948-b12c-0befc8d22283"
+      ]
+    },
+    {
+      "name": "wheel_front_right",
+      "origin": [
+        10,
+        3.5,
+        11
+      ],
+      "color": 0,
+      "uuid": "c63244a4-fc67-4166-b64e-8985fa64e3a9",
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "visibility": true,
+      "autouv": 0,
+      "children": [
+        "8cc09bf4-2487-4b2f-9a32-20c96bcee75a",
+        "1018f46d-1b96-4e3c-a45a-0e24c64475f2"
+      ]
+    },
+    {
+      "name": "wheel_rear_left",
+      "origin": [
+        -10,
+        3.5,
+        -10
+      ],
+      "color": 0,
+      "uuid": "f4824e5f-807d-4650-926e-c48db9f1966b",
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "visibility": true,
+      "autouv": 0,
+      "children": [
+        "e6c5a3b8-f735-40ed-b0a6-e6415afb6971",
+        "cf47fd4a-258e-4b8d-9aca-37f1989dd8b1"
+      ]
+    },
+    {
+      "name": "wheel_rear_right",
+      "origin": [
+        10,
+        3.5,
+        -10
+      ],
+      "color": 0,
+      "uuid": "7e7e0b8e-9ba3-4006-b38c-f19a216edd73",
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "visibility": true,
+      "autouv": 0,
+      "children": [
+        "98c2d2e4-db46-4c05-8d5b-eccabdf62d28",
+        "354b879d-bb05-4461-83a6-9514597ae39d"
+      ]
+    }
+  ],
+  "textures": []
+}

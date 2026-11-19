@@ -1,0 +1,1452 @@
+{
+  "meta": {
+    "format_version": "4.5",
+    "creation_time": 1794600385,
+    "model_format": "free",
+    "box_uv": false
+  },
+  "name": "vegetacion_sierra_pack",
+  "geometry_name": "vegetacion_sierra_pack",
+  "visible_box": [
+    48,
+    64,
+    48
+  ],
+  "resolution": {
+    "width": 64,
+    "height": 64
+  },
+  "elements": [
+    {
+      "name": "piornal_tallo_raiz",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -4,
+        0,
+        -4
+      ],
+      "to": [
+        4,
+        3,
+        4
+      ],
+      "autouv": 0,
+      "color": 1,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "fc0d07fb-e49d-4eee-abe3-596ee45005dd"
+    },
+    {
+      "name": "piornal_cupula_follaje",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -8,
+        2,
+        -8
+      ],
+      "to": [
+        8,
+        9,
+        8
+      ],
+      "autouv": 0,
+      "color": 2,
+      "origin": [
+        0,
+        4,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "1a0908af-ba77-4745-a353-6c70ef6fd9c7"
+    },
+    {
+      "name": "piornal_bulto_norte",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -6,
+        6,
+        2
+      ],
+      "to": [
+        5,
+        11,
+        8
+      ],
+      "autouv": 0,
+      "color": 2,
+      "origin": [
+        0,
+        7,
+        5
+      ],
+      "rotation": [
+        10,
+        15,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "56caa5f2-4056-4e47-a7b6-df76d1395deb"
+    },
+    {
+      "name": "piornal_bulto_sur",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -5,
+        5,
+        -8
+      ],
+      "to": [
+        6,
+        10.5,
+        -1
+      ],
+      "autouv": 0,
+      "color": 2,
+      "origin": [
+        0,
+        7,
+        -4
+      ],
+      "rotation": [
+        -8,
+        -20,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "ec6d116d-a0ee-47c6-a559-a73f424f4b19"
+    },
+    {
+      "name": "piornal_floracion_amarilla",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -7.5,
+        8,
+        -7.5
+      ],
+      "to": [
+        7.5,
+        11.5,
+        7.5
+      ],
+      "autouv": 0,
+      "color": 7,
+      "origin": [
+        0,
+        9,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "13dc098f-09a1-47e4-bd72-5665cf491f16"
+    },
+    {
+      "name": "alerce_tronco_principal",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -2,
+        0,
+        -2
+      ],
+      "to": [
+        2,
+        38,
+        2
+      ],
+      "autouv": 0,
+      "color": 1,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "7c91aaaa-1e53-4a64-8ead-9e72b2c6bb57"
+    },
+    {
+      "name": "alerce_follaje_dorado_base",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -11,
+        8,
+        -11
+      ],
+      "to": [
+        11,
+        16,
+        11
+      ],
+      "autouv": 0,
+      "color": 7,
+      "origin": [
+        0,
+        12,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "18f346da-16a3-402a-80e6-984db23a7950"
+    },
+    {
+      "name": "alerce_follaje_dorado_medio",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -9,
+        16,
+        -9
+      ],
+      "to": [
+        9,
+        25,
+        9
+      ],
+      "autouv": 0,
+      "color": 7,
+      "origin": [
+        0,
+        20,
+        0
+      ],
+      "rotation": [
+        0,
+        45,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "9bca2be7-8cc1-4f6b-b5de-54230aef7007"
+    },
+    {
+      "name": "alerce_follaje_dorado_alto",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -6.5,
+        25,
+        -6.5
+      ],
+      "to": [
+        6.5,
+        33,
+        6.5
+      ],
+      "autouv": 0,
+      "color": 7,
+      "origin": [
+        0,
+        29,
+        0
+      ],
+      "rotation": [
+        0,
+        20,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "9ef285bd-39fd-4010-bdc0-fe7b98c400e4"
+    },
+    {
+      "name": "alerce_follaje_dorado_apice",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -3.5,
+        33,
+        -3.5
+      ],
+      "to": [
+        3.5,
+        42,
+        3.5
+      ],
+      "autouv": 0,
+      "color": 7,
+      "origin": [
+        0,
+        37,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "0e5e36f2-e3c2-4eec-8e32-35af4c70fa1a"
+    },
+    {
+      "name": "pino_tronco_bajo",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -2.5,
+        0,
+        -2.5
+      ],
+      "to": [
+        2.5,
+        14,
+        2.5
+      ],
+      "autouv": 0,
+      "color": 1,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "d28a5afd-2f60-4ebb-a3b0-4639332f23b9"
+    },
+    {
+      "name": "pino_tronco_retorcido",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -2,
+        13,
+        -2
+      ],
+      "to": [
+        3.5,
+        26,
+        3
+      ],
+      "autouv": 0,
+      "color": 1,
+      "origin": [
+        0,
+        14,
+        0
+      ],
+      "rotation": [
+        12,
+        -18,
+        5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "00e7b919-8ae8-4f0d-961b-2644050b78ed"
+    },
+    {
+      "name": "pino_copa_oscura_inf",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -10,
+        15,
+        -6
+      ],
+      "to": [
+        6,
+        22,
+        10
+      ],
+      "autouv": 0,
+      "color": 2,
+      "origin": [
+        -2,
+        18,
+        2
+      ],
+      "rotation": [
+        0,
+        25,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "a9f9e469-f083-4b06-aeb0-3b43a19bd71b"
+    },
+    {
+      "name": "pino_copa_oscura_sup",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -8,
+        23,
+        -8
+      ],
+      "to": [
+        8,
+        31,
+        7
+      ],
+      "autouv": 0,
+      "color": 2,
+      "origin": [
+        0,
+        27,
+        0
+      ],
+      "rotation": [
+        0,
+        -35,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "17fff598-47e3-4b50-a3d9-1e047b4e8b76"
+    },
+    {
+      "name": "granito_cuerpo_principal",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -10,
+        0,
+        -12
+      ],
+      "to": [
+        10,
+        7,
+        12
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "0d29913c-85cb-4a53-9450-3fef916ccf6e"
+    },
+    {
+      "name": "granito_bloque_angulado_a",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -9,
+        5,
+        -8
+      ],
+      "to": [
+        6,
+        13,
+        7
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        0,
+        6,
+        0
+      ],
+      "rotation": [
+        14,
+        22,
+        -8
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "e6cc44e4-720e-4c75-af9a-68c6f92a7e86"
+    },
+    {
+      "name": "granito_cresta_afilada",
+      "box_uv": false,
+      "rescale": false,
+      "locked": false,
+      "from": [
+        -4,
+        10,
+        -5
+      ],
+      "to": [
+        5,
+        16,
+        5
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        0,
+        11,
+        0
+      ],
+      "rotation": [
+        -18,
+        12,
+        15
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      },
+      "uuid": "cb44c6b2-fe9b-469a-92ad-382d3c774faa"
+    }
+  ],
+  "outliner": [
+    {
+      "name": "piornal_serrano",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "color": 0,
+      "uuid": "0d94ef0a-917a-44bd-b58e-d030087c1659",
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "visibility": true,
+      "autouv": 0,
+      "children": [
+        "fc0d07fb-e49d-4eee-abe3-596ee45005dd",
+        "1a0908af-ba77-4745-a353-6c70ef6fd9c7",
+        "56caa5f2-4056-4e47-a7b6-df76d1395deb",
+        "ec6d116d-a0ee-47c6-a559-a73f424f4b19",
+        "13dc098f-09a1-47e4-bd72-5665cf491f16"
+      ]
+    },
+    {
+      "name": "alerce_otono_champsaur",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "color": 0,
+      "uuid": "79f6a0c0-613d-4834-b722-b3cda0c5065a",
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "visibility": true,
+      "autouv": 0,
+      "children": [
+        "7c91aaaa-1e53-4a64-8ead-9e72b2c6bb57",
+        "18f346da-16a3-402a-80e6-984db23a7950",
+        "9bca2be7-8cc1-4f6b-b5de-54230aef7007",
+        "9ef285bd-39fd-4010-bdc0-fe7b98c400e4",
+        "0e5e36f2-e3c2-4eec-8e32-35af4c70fa1a"
+      ]
+    },
+    {
+      "name": "pino_silvestre",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "color": 0,
+      "uuid": "f61df323-58d5-41fb-b1c7-48154d79b788",
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "visibility": true,
+      "autouv": 0,
+      "children": [
+        "d28a5afd-2f60-4ebb-a3b0-4639332f23b9",
+        "00e7b919-8ae8-4f0d-961b-2644050b78ed",
+        "a9f9e469-f083-4b06-aeb0-3b43a19bd71b",
+        "17fff598-47e3-4b50-a3d9-1e047b4e8b76"
+      ]
+    },
+    {
+      "name": "canchal_granito",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "color": 0,
+      "uuid": "58776df9-2702-4a4c-aeac-2a3d8fc6eedb",
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "visibility": true,
+      "autouv": 0,
+      "children": [
+        "0d29913c-85cb-4a53-9450-3fef916ccf6e",
+        "e6cc44e4-720e-4c75-af9a-68c6f92a7e86",
+        "cb44c6b2-fe9b-469a-92ad-382d3c774faa"
+      ]
+    }
+  ],
+  "textures": []
+}
